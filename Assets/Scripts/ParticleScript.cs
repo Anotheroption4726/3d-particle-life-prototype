@@ -2,6 +2,9 @@
 
 public class ParticleScript : MonoBehaviour
 {
+    [SerializeField] string particleType;
+
+
     //
     // Physics
     //
