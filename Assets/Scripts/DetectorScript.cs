@@ -28,11 +28,16 @@ public class DetectorScript : MonoBehaviour
         }
         */
 
-        particleColType = col.GetComponent<ParticleScript>().pType;
+        ParticleScript pScript = col.GetComponent<ParticleScript>();
 
-        if (particleColType == ParticleScript.ParticleType.TYPE_2)
+        if (pScript != null)
         {
-            Debug.Log("Collision");
+            particleColType = pScript.pType;
+
+            if (particleColType == ParticleScript.ParticleType.TYPE_2)
+            {
+                Debug.Log("Collision");
+            }
         }
     }
 }
