@@ -31,14 +31,15 @@ public class DetectorScript : MonoBehaviour
             {
                 // Debug.Log("Collision");
                 parentParticleTransform.LookAt(col.transform);
-                parentRigidBody.AddForce(parentRigidBody.transform.forward * 40);
+                parentRigidBody.AddForce(parentRigidBody.transform.forward * 4);
             }
 
             if (parentParticleType != ParticleScript.ParticleType.TYPE_1 && colliderParticleType == ParticleScript.ParticleType.TYPE_1)
             {
                 // Debug.Log("Collision");
-                parentParticleTransform.LookAt(new Vector3(- col.transform.position.x, -col.transform.position.y, -col.transform.position.z));
-                parentRigidBody.AddForce(parentRigidBody.transform.forward * 40);
+                parentParticleTransform.LookAt(col.transform);
+                // parentParticleTransform.LookAt(new Vector3(- col.transform.position.x, -col.transform.position.y, -col.transform.position.z));
+                parentRigidBody.AddForce(parentRigidBody.transform.forward * 4);
             }
         }
     }

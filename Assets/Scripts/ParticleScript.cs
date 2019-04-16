@@ -54,7 +54,7 @@ public class ParticleScript : MonoBehaviour
     {
         m_NextSpaceTime = Time.time;
         m_NextFire1Time = Time.time;
-        Time.timeScale = 1f;
+        Time.timeScale = 0.1f;
     }
 
 
