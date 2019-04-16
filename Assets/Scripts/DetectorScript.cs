@@ -4,39 +4,41 @@ using UnityEngine;
 
 public class DetectorScript : MonoBehaviour
 {
+    Transform parentParticleTransform;
+    ParticleScript.ParticleType parentParticleType;
+    Rigidbody parentRigidBody;
 
-    ParticleScript.ParticleType particleColType;
 
-    // Start is called before the first frame update
-    void Start()
+
+    void Awake()
     {
-        
+        parentParticleTransform = transform.parent;
+        parentParticleType = parentParticleTransform.GetComponent<ParticleScript>().pType;
+        parentRigidBody = parentParticleTransform.GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+
+    void OnTriggerStay(Collider col)
     {
-        
-    }
+        ParticleScript.ParticleType colliderParticleType;
+        ParticleScript pColScript = col.GetComponent<ParticleScript>();
 
-    void OnTriggerEnter(Collider col)
-    {
-        /*
-        if (col.GetComponent<ParticleScript>().particleType.Type2)
+        if (pColScript != null)
         {
-            Debug.Log("Collision");
-        }
-        */
+            colliderParticleType = pColScript.pType;
 
-        ParticleScript pScript = col.GetComponent<ParticleScript>();
-
-        if (pScript != null)
-        {
-            particleColType = pScript.pType;
-
-            if (particleColType == ParticleScript.ParticleType.TYPE_2)
+            if (parentParticleType != ParticleScript.ParticleType.TYPE_2 && colliderParticleType == ParticleScript.ParticleType.TYPE_2)
             {
-                Debug.Log("Collision");
+                // Debug.Log("Collision");
+                parentParticleTransform.LookAt(col.transform);
+                parentRigidBody.AddForce(parentRigidBody.transform.forward * 40);
+            }
+
+            if (parentParticleType != ParticleScript.ParticleType.TYPE_1 && colliderParticleType == ParticleScript.ParticleType.TYPE_1)
+            {
+                // Debug.Log("Collision");
+                parentParticleTransform.LookAt(new Vector3(- col.transform.position.x, -col.transform.position.y, -col.transform.position.z));
+                parentRigidBody.AddForce(parentRigidBody.transform.forward * 40);
             }
         }
     }
