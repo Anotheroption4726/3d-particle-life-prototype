@@ -1,8 +1,9 @@
 ﻿<Properties StartupConfiguration="{C963CCA0-8E6F-04EE-FAAE-4CDAE686BDAA}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ParticleScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DetectorScript.cs">
     <Files>
       <File FileName="Assets/Scripts/CameraScript.cs" Line="85" Column="45" />
-      <File FileName="Assets/Scripts/ParticleScript.cs" Line="54" Column="28" />
+      <File FileName="Assets/Scripts/ParticleScript.cs" Line="10" Column="16" />
+      <File FileName="Assets/Scripts/DetectorScript.cs" Line="31" Column="68" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -10,7 +11,7 @@
           <Node name="3d-particle-life-prototype" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="ParticleScript.cs" selected="True" />
+                <Node name="DetectorScript.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -20,7 +21,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="1932d13f-5850-4612-8889-e68d3cf4f5a8" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="f11b53bd-7dbb-4d0a-8ad0-c76bdb7ce418" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
