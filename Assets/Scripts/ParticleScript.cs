@@ -2,7 +2,14 @@
 
 public class ParticleScript : MonoBehaviour
 {
-    [SerializeField] string particleType;
+    enum Type
+    {
+        Type1,
+        Type2,
+    };
+
+    [SerializeField] Type particleType;
+
 
 
     //
