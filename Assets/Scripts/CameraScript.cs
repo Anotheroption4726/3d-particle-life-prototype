@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class CameraScript : MonoBehaviour
 {
@@ -34,7 +35,9 @@ public class CameraScript : MonoBehaviour
     {
         cameraZoom();
         cameraRotation();
+        cameraPanning();
     }
+
 
 
     // Used to zoom in and out of the scene
@@ -56,6 +59,7 @@ public class CameraScript : MonoBehaviour
     }
 
 
+
     // Used to rotate the camera around the scene
     void cameraRotation()
     {
@@ -67,7 +71,18 @@ public class CameraScript : MonoBehaviour
 
         mouseY = Mathf.Clamp(mouseY, -60f, 60f);
 
-        transform.localRotation = Quaternion.Euler(mouseY, mouseX, 0);
-        playerCam.LookAt(transform.position);
+        transform.rotation = Quaternion.Euler(mouseY, mouseX, 0);
+        // playerCam.LookAt(transform.position);
+    }
+
+
+
+    private void cameraPanning()
+    {
+        if (Input.GetMouseButton(2))
+        {
+            //transform.position += new Vector3(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"), 0);
+            transform.Translate(new Vector3(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"), 0), Space.Self);
+        }
     }
 }

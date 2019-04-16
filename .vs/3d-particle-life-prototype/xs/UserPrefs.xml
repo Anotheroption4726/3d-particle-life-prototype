@@ -1,7 +1,8 @@
 ﻿<Properties StartupConfiguration="{C963CCA0-8E6F-04EE-FAAE-4CDAE686BDAA}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ParticleScript.cs">
     <Files>
-      <File FileName="Assets/Scripts/ParticleScript.cs" Line="5" Column="42" />
+      <File FileName="Assets/Scripts/CameraScript.cs" Line="85" Column="45" />
+      <File FileName="Assets/Scripts/ParticleScript.cs" Line="54" Column="28" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -19,7 +20,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="773b2937-ed1b-4376-9942-237ecadaed70" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="1932d13f-5850-4612-8889-e68d3cf4f5a8" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
