@@ -14,8 +14,15 @@ public class DetectorScript : MonoBehaviour
     //  Detected Particle Variables
     //
     Collider pCol;
+    Vector3 pColPosition;
     ParticleScript pColScript;
     ParticleScript.ParticleType colliderParticleType;
+
+
+    //
+    //  Movement Vector
+    //
+    Vector3 vDirection;
 
 
     //
@@ -37,14 +44,16 @@ public class DetectorScript : MonoBehaviour
         pCol = col;
         pColScript = pCol.GetComponent<ParticleScript>();
 
+        pColPosition = pCol.transform.position;
+        vDirection = (pColPosition - transform.position).normalized;
+
+
         if (pColScript != null)
         {
             colliderParticleType = pColScript.pType;
+
             BehaviorType1();
             BehaviorType2();
-
-            //BehaviorType1_LookAt();
-            //BehaviorType2_LookAt();
         }
     }
 
@@ -56,7 +65,7 @@ public class DetectorScript : MonoBehaviour
     {
         if (parentParticleType != ParticleScript.ParticleType.TYPE_1 && colliderParticleType == ParticleScript.ParticleType.TYPE_1)
         {
-
+            parentRigidBody.AddForce(vDirection * 40);
         }
     }
 
@@ -68,36 +77,7 @@ public class DetectorScript : MonoBehaviour
     {
         if (parentParticleType != ParticleScript.ParticleType.TYPE_2 && colliderParticleType == ParticleScript.ParticleType.TYPE_2)
         {
-
-        }
-    }
-
-
-    //
-    //  Behavior Type_1 (Using LookAt) - Detected Particle is TYPE_1
-    //
-    void BehaviorType1_LookAt()
-    {
-        if (parentParticleType != ParticleScript.ParticleType.TYPE_1 && colliderParticleType == ParticleScript.ParticleType.TYPE_1)
-        {
-            // Debug.Log("Collision");
-            parentParticleTransform.LookAt(pCol.transform);
-            // parentParticleTransform.LookAt(new Vector3(- col.transform.position.x, -col.transform.position.y, -col.transform.position.z));
-            parentRigidBody.AddForce(parentRigidBody.transform.forward * 40);
-        }
-    }
-
-
-    //
-    //  Behavior Type_2 (Using LookAt)- Detected Particle is TYPE_2
-    //
-    void BehaviorType2_LookAt()
-    {
-        if (parentParticleType != ParticleScript.ParticleType.TYPE_2 && colliderParticleType == ParticleScript.ParticleType.TYPE_2)
-        {
-            // Debug.Log("Collision");
-            parentParticleTransform.LookAt(pCol.transform);
-            parentRigidBody.AddForce(parentRigidBody.transform.forward * 40);
+            parentRigidBody.AddForce(vDirection * 40);
         }
     }
 }

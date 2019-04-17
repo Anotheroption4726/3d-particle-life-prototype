@@ -2,8 +2,8 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DetectorScript.cs">
     <Files>
       <File FileName="Assets/Scripts/CameraScript.cs" Line="85" Column="45" />
-      <File FileName="Assets/Scripts/ParticleScript.cs" Line="56" Column="37" />
-      <File FileName="Assets/Scripts/DetectorScript.cs" Line="41" Column="82" />
+      <File FileName="Assets/Scripts/ParticleScript.cs" Line="57" Column="28" />
+      <File FileName="Assets/Scripts/DetectorScript.cs" Line="55" Column="13" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
