@@ -11,21 +11,6 @@ public class DetectorScript : MonoBehaviour
 
 
     //
-    //  Detected Particle Variables
-    //
-    Collider pCol;
-    Vector3 pColPosition;
-    ParticleScript pColScript;
-    ParticleScript.ParticleType colliderParticleType;
-
-
-    //
-    //  Movement Vector
-    //
-    Vector3 vDirection;
-
-
-    //
     // Awake Function
     //
     void Awake()
@@ -41,19 +26,15 @@ public class DetectorScript : MonoBehaviour
     //
     void OnTriggerStay(Collider col)
     {
-        pCol = col;
-        pColScript = pCol.GetComponent<ParticleScript>();
-
-        pColPosition = pCol.transform.position;
-        vDirection = (pColPosition - transform.position).normalized;
-
+        ParticleScript pColScript = col.GetComponent<ParticleScript>();
 
         if (pColScript != null)
         {
-            colliderParticleType = pColScript.pType;
+            Vector3 pColPosition = col.transform.position;
+            ParticleScript.ParticleType colliderParticleType = pColScript.pType;
 
-            BehaviorType1();
-            BehaviorType2();
+            BehaviorType1(colliderParticleType, pColPosition);
+            BehaviorType2(colliderParticleType, pColPosition);
         }
     }
 
@@ -61,9 +42,11 @@ public class DetectorScript : MonoBehaviour
     //
     //  Behavior Type_1 - Detected Particle is TYPE_1
     //
-    void BehaviorType1()
+    void BehaviorType1(ParticleScript.ParticleType cpType, Vector3 cpPosition)
     {
-        if (parentParticleType != ParticleScript.ParticleType.TYPE_1 && colliderParticleType == ParticleScript.ParticleType.TYPE_1)
+        Vector3 vDirection = (cpPosition - transform.position).normalized;
+
+        if (parentParticleType != ParticleScript.ParticleType.TYPE_1 && cpType == ParticleScript.ParticleType.TYPE_1)
         {
             parentRigidBody.AddForce(vDirection * 40);
         }
@@ -73,9 +56,11 @@ public class DetectorScript : MonoBehaviour
     //
     //  Behavior Type_2 - Detected Particle is TYPE_2
     //
-    void BehaviorType2()
+    void BehaviorType2(ParticleScript.ParticleType cpType, Vector3 cpPosition)
     {
-        if (parentParticleType != ParticleScript.ParticleType.TYPE_2 && colliderParticleType == ParticleScript.ParticleType.TYPE_2)
+        Vector3 vDirection = (cpPosition - transform.position).normalized;
+
+        if (parentParticleType != ParticleScript.ParticleType.TYPE_2 && cpType == ParticleScript.ParticleType.TYPE_2)
         {
             parentRigidBody.AddForce(vDirection * 40);
         }

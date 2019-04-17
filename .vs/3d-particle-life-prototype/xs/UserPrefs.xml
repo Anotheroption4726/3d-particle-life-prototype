@@ -3,7 +3,7 @@
     <Files>
       <File FileName="Assets/Scripts/CameraScript.cs" Line="85" Column="45" />
       <File FileName="Assets/Scripts/ParticleScript.cs" Line="57" Column="28" />
-      <File FileName="Assets/Scripts/DetectorScript.cs" Line="55" Column="13" />
+      <File FileName="Assets/Scripts/DetectorScript.cs" Line="14" Column="22" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -21,7 +21,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="8bd96453-c12d-4330-aef8-573258257fb7" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="9999d28c-ae84-43c0-b635-7a246ece9187" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
