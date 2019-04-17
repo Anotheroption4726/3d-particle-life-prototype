@@ -26,43 +26,70 @@ public class DetectorScript : MonoBehaviour
     //
     void OnTriggerStay(Collider col)
     {
-        ParticleScript pColScript = col.GetComponent<ParticleScript>();
-
-        if (pColScript != null)
+        if (col.GetComponent<ParticleScript>() != null && parentParticleType != col.GetComponent<ParticleScript>().pType)
         {
+            ParticleScript pColScript = col.GetComponent<ParticleScript>();
             Vector3 pColPosition = col.transform.position;
-            ParticleScript.ParticleType colliderParticleType = pColScript.pType;
+            ParticleScript.ParticleType pColType = pColScript.pType;
 
-            BehaviorType1(colliderParticleType, pColPosition);
-            BehaviorType2(colliderParticleType, pColPosition);
+            if (parentParticleType == ParticleScript.ParticleType.TYPE_1)
+            {
+                if (pColType == ParticleScript.ParticleType.TYPE_2)
+                {
+                    AttractParticle(pColPosition);
+                }
+
+                if (pColType == ParticleScript.ParticleType.TYPE_3)
+                {
+                    RepulseParticle(pColPosition);
+                }
+            }
+
+            if (parentParticleType == ParticleScript.ParticleType.TYPE_2)
+            {
+                if (pColType == ParticleScript.ParticleType.TYPE_1)
+                {
+                    RepulseParticle(pColPosition);
+                }
+
+                if (pColType == ParticleScript.ParticleType.TYPE_3)
+                {
+                    AttractParticle(pColPosition);
+                }
+            }
+
+            if (parentParticleType == ParticleScript.ParticleType.TYPE_3)
+            {
+                if (pColType == ParticleScript.ParticleType.TYPE_1)
+                {
+                    AttractParticle(pColPosition);
+                }
+
+                if (pColType == ParticleScript.ParticleType.TYPE_2)
+                {
+                    RepulseParticle(pColPosition);
+                }
+            }
         }
     }
 
 
     //
-    //  Behavior Type_1 - Detected Particle is TYPE_1
+    //  Attract Particle Behavior
     //
-    void BehaviorType1(ParticleScript.ParticleType cpType, Vector3 cpPosition)
+    void AttractParticle(Vector3 cpPosition)
     {
         Vector3 vDirection = (cpPosition - transform.position).normalized;
-
-        if (parentParticleType != ParticleScript.ParticleType.TYPE_1 && cpType == ParticleScript.ParticleType.TYPE_1)
-        {
-            parentRigidBody.AddForce(vDirection * 40);
-        }
+        parentRigidBody.AddForce(vDirection * 40);
     }
 
 
     //
-    //  Behavior Type_2 - Detected Particle is TYPE_2
+    //  Repulse Particle Behavior
     //
-    void BehaviorType2(ParticleScript.ParticleType cpType, Vector3 cpPosition)
+    void RepulseParticle(Vector3 cpPosition)
     {
         Vector3 vDirection = (transform.position - cpPosition).normalized;
-
-        if (parentParticleType != ParticleScript.ParticleType.TYPE_2 && cpType == ParticleScript.ParticleType.TYPE_2)
-        {
-            parentRigidBody.AddForce(vDirection * 40);
-        }
+        parentRigidBody.AddForce(vDirection * 40);
     }
 }

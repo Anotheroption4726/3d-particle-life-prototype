@@ -9,6 +9,7 @@ public class ParticleScript : MonoBehaviour
     {
         TYPE_1,
         TYPE_2,
+        TYPE_3,
     };
 
     public ParticleType pType;
@@ -17,9 +18,7 @@ public class ParticleScript : MonoBehaviour
     //
     //  Display
     //
-    [SerializeField] Material redMaterial;
-    [SerializeField] Material greenMaterial;
-
+    [SerializeField] Material redMaterial, greenMaterial, blueMaterial;
 
 
     //
@@ -34,9 +33,6 @@ public class ParticleScript : MonoBehaviour
     //
     float m_NextSpaceTime;
     [SerializeField] float m_SpaceCoolDownDuration;
-
-    float m_NextFire1Time;
-    [SerializeField] float m_Fire1CoolDownDuration;
 
 
 
@@ -61,6 +57,11 @@ public class ParticleScript : MonoBehaviour
         {
             GetComponent<MeshRenderer>().material = greenMaterial;
         }
+
+        if (pType == ParticleType.TYPE_3)
+        {
+            GetComponent<MeshRenderer>().material = blueMaterial;
+        }
     }
 
 
@@ -70,8 +71,7 @@ public class ParticleScript : MonoBehaviour
     void Start()
     {
         m_NextSpaceTime = Time.time;
-        m_NextFire1Time = Time.time;
-        Time.timeScale = 0.1f;
+        Time.timeScale = 1f;
     }
 
 
@@ -81,15 +81,6 @@ public class ParticleScript : MonoBehaviour
     private void Update()
     {
         UserInputs();
-    }
-
-
-    //
-    // FixedUpdate Function
-    //
-    void FixedUpdate()
-    {
-
     }
 
 
@@ -116,29 +107,13 @@ public class ParticleScript : MonoBehaviour
     //
     private void UserInputs()
     {
-
-        //
-        // Setting up inputs
-        //
         bool onSpace = Input.GetButton("Jump");
-        bool onFire1 = Input.GetButton("Fire1");
 
-        //
-        // Space
-        //
-        if (onSpace && Time.time > m_SpaceCoolDownDuration)
-        {
-            AddForce();
-            m_NextSpaceTime = Time.time + m_SpaceCoolDownDuration;
-        }
-
-        //
-        // Left Mouse Click
-        //
-        if (onFire1 && Time.time > m_Fire1CoolDownDuration)
+        if (onSpace && Time.time > m_NextSpaceTime)
         {
             SetRandomDirection();
-            m_NextFire1Time = Time.time + m_Fire1CoolDownDuration;
+            AddForce();
+            m_NextSpaceTime = Time.time + m_SpaceCoolDownDuration;
         }
     }
 }
