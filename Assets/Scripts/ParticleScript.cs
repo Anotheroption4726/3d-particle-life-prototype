@@ -44,7 +44,7 @@ public class ParticleScript : MonoBehaviour
     //
     // Awake Function
     //
-    private void Awake()
+    void Awake()
     {
         particleRigidbody = GetComponent<Rigidbody>();
 
@@ -78,7 +78,7 @@ public class ParticleScript : MonoBehaviour
     //
     // Update Function
     //
-    private void Update()
+    void Update()
     {
         UserInputs();
     }
@@ -105,7 +105,7 @@ public class ParticleScript : MonoBehaviour
     //
     // User Inputs
     //
-    private void UserInputs()
+    void UserInputs()
     {
         bool onSpace = Input.GetButton("Jump");
 
