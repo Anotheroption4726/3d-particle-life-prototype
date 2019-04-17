@@ -58,7 +58,7 @@ public class DetectorScript : MonoBehaviour
     //
     void BehaviorType2(ParticleScript.ParticleType cpType, Vector3 cpPosition)
     {
-        Vector3 vDirection = (cpPosition - transform.position).normalized;
+        Vector3 vDirection = (transform.position - cpPosition).normalized;
 
         if (parentParticleType != ParticleScript.ParticleType.TYPE_2 && cpType == ParticleScript.ParticleType.TYPE_2)
         {

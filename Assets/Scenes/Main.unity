@@ -664,6 +664,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pType: 1
+  redMaterial: {fileID: 2100000, guid: 4b6e522960e87461ea01248fd56454a0, type: 2}
+  greenMaterial: {fileID: 2100000, guid: 870bdc7d930a9449389f8d02a8e32f6a, type: 2}
   thrust: 2000
   m_SpaceCoolDownDuration: 0.25
   m_Fire1CoolDownDuration: 0.25
@@ -749,7 +751,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 850628346}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.26, y: 2, z: -3.07}
+  m_LocalPosition: {x: 1.26, y: -0.3, z: -3.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1468699874}
@@ -1787,6 +1789,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pType: 0
+  redMaterial: {fileID: 2100000, guid: 4b6e522960e87461ea01248fd56454a0, type: 2}
+  greenMaterial: {fileID: 2100000, guid: 870bdc7d930a9449389f8d02a8e32f6a, type: 2}
   thrust: 2000
   m_SpaceCoolDownDuration: 0.25
   m_Fire1CoolDownDuration: 0.25

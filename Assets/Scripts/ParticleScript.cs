@@ -14,6 +14,13 @@ public class ParticleScript : MonoBehaviour
     public ParticleType pType;
 
 
+    //
+    //  Display
+    //
+    [SerializeField] Material redMaterial;
+    [SerializeField] Material greenMaterial;
+
+
 
     //
     // Physics
@@ -44,6 +51,16 @@ public class ParticleScript : MonoBehaviour
     private void Awake()
     {
         particleRigidbody = GetComponent<Rigidbody>();
+
+        if (pType == ParticleType.TYPE_1)
+        {
+            GetComponent<MeshRenderer>().material = redMaterial;
+        }
+
+        if (pType == ParticleType.TYPE_2)
+        {
+            GetComponent<MeshRenderer>().material = greenMaterial;
+        }
     }
 
 
