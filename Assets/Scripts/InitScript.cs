@@ -3,15 +3,20 @@ using UnityEngine.UI;
 
 public class InitScript : MonoBehaviour
 {
-    [SerializeField] GameObject redParticle, greenParticle, blueParticle;
-    [SerializeField] int totalRedParticles, totalGreenParticles, totalBlueParticles;
-    [SerializeField] InputField inputRedParticles, inputGreenParticles, inputBlueParticles;
+    int totalRedParticles, totalGreenParticles, totalBlueParticles;
 
+    [SerializeField] GameObject redParticle, greenParticle, blueParticle;
+    [SerializeField] Slider redSlider, greenSlider, blueSlider;
     [SerializeField] Button resetButton;
+
+
 
     void Awake()
     {
         resetButton.onClick.AddListener(TaskOnClick);
+        redSlider.onValueChanged.AddListener(delegate {SliderMethod();});
+        greenSlider.onValueChanged.AddListener(delegate { SliderMethod(); });
+        blueSlider.onValueChanged.AddListener(delegate { SliderMethod(); });
     }
 
     void Start()
@@ -25,9 +30,17 @@ public class InitScript : MonoBehaviour
         InitializeParticles();
     }
 
+    void SliderMethod()
+    {
+        RemoveParticles();
+        InitializeParticles();
+    }
+
     void InitializeParticles()
     {
-        ClampValues();
+        totalRedParticles = (int)redSlider.value;
+        totalGreenParticles = (int)greenSlider.value;
+        totalBlueParticles = (int)blueSlider.value;
 
         for (int i = 0; i < totalRedParticles; i++)
         {
@@ -59,16 +72,5 @@ public class InitScript : MonoBehaviour
         {
             Destroy(particle);
         }
-
-        totalRedParticles = int.Parse(inputRedParticles.text);
-        totalGreenParticles = int.Parse(inputGreenParticles.text);
-        totalBlueParticles = int.Parse(inputBlueParticles.text);
-    }
-
-    void ClampValues()
-    {
-        totalRedParticles = Mathf.Clamp(totalRedParticles, 0, 15);
-        totalGreenParticles = Mathf.Clamp(totalGreenParticles, 0, 15);
-        totalBlueParticles = Mathf.Clamp(totalBlueParticles, 0, 15);
     }
 }
