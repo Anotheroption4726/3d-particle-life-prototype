@@ -24,7 +24,7 @@ public class ParticleScript : MonoBehaviour
     //
     // Physics
     //
-    [SerializeField] int thrust = 4000;
+    [SerializeField] int spaceForce = 4000;
     Rigidbody particleRigidbody;
 
 
@@ -98,7 +98,7 @@ public class ParticleScript : MonoBehaviour
     //
     void AddForce()
     {
-        particleRigidbody.AddForce(particleRigidbody.transform.forward * thrust);
+        particleRigidbody.AddForce(particleRigidbody.transform.forward * spaceForce);
     }
 
 
