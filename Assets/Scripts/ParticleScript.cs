@@ -87,7 +87,7 @@ public class ParticleScript : MonoBehaviour
     //
     // Set Particle to a random direction
     //
-    void SetRandomDirection()
+    public void SetRandomDirection()
     {
         transform.rotation = Quaternion.Euler(Random.value * 360, Random.value * 360, Random.value * 360);
     }
@@ -96,7 +96,7 @@ public class ParticleScript : MonoBehaviour
     //
     // Throw Particle Forward
     //
-    void AddForce()
+    public void AddForce()
     {
         particleRigidbody.AddForce(particleRigidbody.transform.forward * spaceForce);
     }

@@ -11,13 +11,7 @@ public class DetectorRed : DetectorMAIN
         if (col.GetComponent<ParticleScript>() != null && col.GetComponent<ParticleScript>().pType != ParticleScript.ParticleType.TYPE_1)
         {
             ParticleScript pColScript = col.GetComponent<ParticleScript>();
-
-
-
             float distance = Vector3.Distance(transform.parent.transform.position, col.transform.position);
-            // Debug.Log(distance);
-
-
 
             //  Getting the position and type of the particle detected
             Vector3 pColPosition = col.transform.position;
