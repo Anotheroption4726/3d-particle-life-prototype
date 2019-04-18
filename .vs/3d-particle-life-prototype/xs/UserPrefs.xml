@@ -1,13 +1,13 @@
 ﻿<Properties StartupConfiguration="{C963CCA0-8E6F-04EE-FAAE-4CDAE686BDAA}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ParticleScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DetectorScripts/DetectorMAIN.cs">
     <Files>
       <File FileName="Assets/Scripts/CameraScript.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/UIScript.cs" Line="1" Column="19" />
       <File FileName="Assets/Scripts/ParticleScript.cs" Line="21" Column="72" />
-      <File FileName="Assets/Scripts/DetectorScripts/DetectorMAIN.cs" Line="16" Column="68" />
-      <File FileName="Assets/Scripts/DetectorScripts/DetectorRed.cs" Line="31" Column="2" />
-      <File FileName="Assets/Scripts/DetectorScripts/DetectorGreen.cs" Line="31" Column="2" />
-      <File FileName="Assets/Scripts/DetectorScripts/DetectorBlue.cs" Line="28" Column="14" />
+      <File FileName="Assets/Scripts/DetectorScripts/DetectorMAIN.cs" Line="37" Column="6" />
+      <File FileName="Assets/Scripts/DetectorScripts/DetectorRed.cs" Line="20" Column="1" />
+      <File FileName="Assets/Scripts/DetectorScripts/DetectorGreen.cs" Line="17" Column="36" />
+      <File FileName="Assets/Scripts/DetectorScripts/DetectorBlue.cs" Line="32" Column="55" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,8 +15,9 @@
           <Node name="3d-particle-life-prototype" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="DetectorScripts" expanded="True" />
-                <Node name="ParticleScript.cs" selected="True" />
+                <Node name="DetectorScripts" expanded="True">
+                  <Node name="DetectorMAIN.cs" selected="True" />
+                </Node>
               </Node>
             </Node>
           </Node>
@@ -26,7 +27,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="e5ddda91-d738-4e80-831e-9f46c49b4fbe" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="fd9259d3-e493-4735-a9e2-4763dd2472aa" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -20,19 +20,19 @@ public abstract class DetectorMAIN : MonoBehaviour
     //
     //  Attract Particle Behavior
     //
-    public void AttractParticle(Vector3 cpPosition)
+    public void AttractParticle(Vector3 cpPosition, float cpDistance)
     {
         Vector3 vDirection = (cpPosition - transform.position).normalized;
-        pParRigidBody.AddForce(vDirection * 40);
+        pParRigidBody.AddForce(vDirection * (cpDistance * 10));
     }
 
 
     //
     //  Repulse Particle Behavior
     //
-    public void RepulseParticle(Vector3 cpPosition)
+    public void RepulseParticle(Vector3 cpPosition, float cpDistance)
     {
         Vector3 vDirection = (transform.position - cpPosition).normalized;
-        pParRigidBody.AddForce(vDirection * 40);
+        pParRigidBody.AddForce(vDirection * ((GetComponent<SphereCollider>().radius - cpDistance) * 10));
     }
 }

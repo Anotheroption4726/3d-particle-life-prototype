@@ -12,6 +12,13 @@ public class DetectorRed : DetectorMAIN
         {
             ParticleScript pColScript = col.GetComponent<ParticleScript>();
 
+
+
+            float distance = Vector3.Distance(transform.parent.transform.position, col.transform.position);
+            // Debug.Log(distance);
+
+
+
             //  Getting the position and type of the particle detected
             Vector3 pColPosition = col.transform.position;
             ParticleScript.ParticleType pColType = pColScript.pType;
@@ -19,12 +26,12 @@ public class DetectorRed : DetectorMAIN
             //  Applying physics behavior
             if (pColType == ParticleScript.ParticleType.TYPE_2)
             {
-                AttractParticle(pColPosition);
+                AttractParticle(pColPosition, distance);
             }
 
             if (pColType == ParticleScript.ParticleType.TYPE_3)
             {
-                RepulseParticle(pColPosition);
+                RepulseParticle(pColPosition, distance);
             }
         }
     }
