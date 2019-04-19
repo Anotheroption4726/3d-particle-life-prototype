@@ -1,14 +1,13 @@
 ﻿<Properties StartupConfiguration="{C963CCA0-8E6F-04EE-FAAE-4CDAE686BDAA}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/InitScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DetectorScripts/DetectorGreen.cs">
     <Files>
-      <File FileName="Assets/Scripts/InitScript.cs" Line="96" Column="66" />
-      <File FileName="Assets/Scripts/ParticleScript.cs" Line="76" Column="68" />
-      <File FileName="Assets/Scripts/DetectorScripts/DetectorMAIN.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/DetectorScripts/DetectorRed.cs" Line="32" Column="2" />
-      <File FileName="Assets/Scripts/DetectorScripts/DetectorBlue.cs" Line="3" Column="41" />
-      <File FileName="Assets/Scripts/DetectorScripts/DetectorCyan.cs" Line="33" Column="1" />
-      <File FileName="Assets/Scripts/DetectorScripts/DetectorPurple.cs" Line="31" Column="6" />
-      <File FileName="Assets/Scripts/DetectorScripts/DetectorYellow.cs" Line="25" Column="1" />
+      <File FileName="Assets/Scripts/DetectorScripts/DetectorMAIN.cs" Line="51" Column="42" />
+      <File FileName="Assets/Scripts/DetectorScripts/DetectorRed.cs" Line="60" Column="14" />
+      <File FileName="Assets/Scripts/DetectorScripts/DetectorGreen.cs" Line="58" Column="14" />
+      <File FileName="Assets/Scripts/DetectorScripts/DetectorBlue.cs" Line="32" Column="57" />
+      <File FileName="Assets/Scripts/DetectorScripts/DetectorCyan.cs" Line="32" Column="58" />
+      <File FileName="Assets/Scripts/DetectorScripts/DetectorPurple.cs" Line="32" Column="58" />
+      <File FileName="Assets/Scripts/DetectorScripts/DetectorYellow.cs" Line="28" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -16,8 +15,9 @@
           <Node name="3d-particle-life-prototype" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="DetectorScripts" expanded="True" />
-                <Node name="InitScript.cs" selected="True" />
+                <Node name="DetectorScripts" expanded="True">
+                  <Node name="DetectorGreen.cs" selected="True" />
+                </Node>
               </Node>
             </Node>
           </Node>
@@ -27,7 +27,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d5d7ef0e-6203-47df-af2a-c8cf8db8f356" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="0605645c-7ffb-4bfe-91d1-ccfd7dc5f1a0" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

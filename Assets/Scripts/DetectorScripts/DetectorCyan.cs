@@ -8,7 +8,7 @@ public class DetectorCyan : DetectorMAIN
     void OnTriggerStay(Collider col)
     {
         //  Checking if collider is a particle different from the parent
-        if (col.GetComponent<ParticleScript>() != null && col.GetComponent<ParticleScript>().pType != ParticleScript.ParticleType.TYPE_4)
+        if (col.GetComponent<ParticleScript>() != null)
         {
             ParticleScript pColScript = col.GetComponent<ParticleScript>();
             float distance = Vector3.Distance(transform.parent.transform.position, col.transform.position);
@@ -17,15 +17,22 @@ public class DetectorCyan : DetectorMAIN
             Vector3 pColPosition = col.transform.position;
             ParticleScript.ParticleType pColType = pColScript.pType;
 
-            //  Applying physics behavior
-            if (pColType == ParticleScript.ParticleType.TYPE_5)
+
+
+
+            //  Applying physics behavior on same type
+            if (pColType == ParticleScript.ParticleType.TYPE_4)
             {
-                AttractParticle(pColPosition, distance);
+                RepulseParticleFixed(pColPosition, distance);
             }
 
-            if (pColType == ParticleScript.ParticleType.TYPE_6)
+
+
+
+            //  Applying physics behavior on second batch
+            if (pColType == ParticleScript.ParticleType.TYPE_5)
             {
-                RepulseParticle(pColPosition, distance);
+                AttractParticleRelative(pColPosition, distance);
             }
         }
     }

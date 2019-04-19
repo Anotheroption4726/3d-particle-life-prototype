@@ -8,7 +8,7 @@ public class DetectorGreen : DetectorMAIN
     void OnTriggerStay(Collider col)
     {
         //  Checking if collider is a particle different from the parent
-        if (col.GetComponent<ParticleScript>() != null && col.GetComponent<ParticleScript>().pType != ParticleScript.ParticleType.TYPE_2)
+        if (col.GetComponent<ParticleScript>() != null)
         {
             ParticleScript pColScript = col.GetComponent<ParticleScript>();
             float distance = Vector3.Distance(transform.parent.transform.position, col.transform.position);
@@ -17,15 +17,46 @@ public class DetectorGreen : DetectorMAIN
             Vector3 pColPosition = col.transform.position;
             ParticleScript.ParticleType pColType = pColScript.pType;
 
-            //  Applying physics behavior
+
+
+
+            //  Applying physics behavior on same type
+            if (pColType == ParticleScript.ParticleType.TYPE_2)
+            {
+                RepulseParticleFixed(pColPosition, distance);
+            }
+
+
+
+
+            //  Applying physics behavior on first batch
             if (pColType == ParticleScript.ParticleType.TYPE_1)
             {
-                RepulseParticle(pColPosition, distance);
+                RepulseParticleRelative(pColPosition, distance);
             }
 
             if (pColType == ParticleScript.ParticleType.TYPE_3)
             {
-                AttractParticle(pColPosition, distance);
+                AttractParticleRelative(pColPosition, distance);
+            }
+
+
+
+
+            //  Applying physics behavior on second batch
+            if (pColType == ParticleScript.ParticleType.TYPE_4)
+            {
+                AttractParticleFixed(pColPosition, distance);
+            }
+
+            if (pColType == ParticleScript.ParticleType.TYPE_5)
+            {
+                AttractParticleRelative(pColPosition, distance);
+            }
+
+            if (pColType == ParticleScript.ParticleType.TYPE_6)
+            {
+                RepulseParticleFixed(pColPosition, distance);
             }
         }
     }
