@@ -10,6 +10,9 @@ public class ParticleScript : MonoBehaviour
         TYPE_1,
         TYPE_2,
         TYPE_3,
+        TYPE_4,
+        TYPE_5,
+        TYPE_6,
     };
 
     public ParticleType pType;
@@ -18,7 +21,7 @@ public class ParticleScript : MonoBehaviour
     //
     //  Display
     //
-    [SerializeField] Material redMaterial, greenMaterial, blueMaterial;
+    [SerializeField] Material redMaterial, greenMaterial, blueMaterial, cyanMaterial, purpleMaterial, yellowMaterial;
 
 
     //
@@ -61,6 +64,21 @@ public class ParticleScript : MonoBehaviour
         if (pType == ParticleType.TYPE_3)
         {
             GetComponent<MeshRenderer>().material = blueMaterial;
+        }
+
+        if (pType == ParticleType.TYPE_4)
+        {
+            GetComponent<MeshRenderer>().material = cyanMaterial;
+        }
+
+        if (pType == ParticleType.TYPE_5)
+        {
+            GetComponent<MeshRenderer>().material = purpleMaterial;
+        }
+
+        if (pType == ParticleType.TYPE_6)
+        {
+            GetComponent<MeshRenderer>().material = yellowMaterial;
         }
     }
 
