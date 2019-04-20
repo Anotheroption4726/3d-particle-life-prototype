@@ -23,7 +23,7 @@ public abstract class DetectorMAIN : MonoBehaviour
     public void AttractParticleRelative(Vector3 cpPosition, float cpDistance)
     {
         Vector3 vDirection = (cpPosition - transform.position).normalized;
-        pParRigidBody.AddForce(vDirection * (cpDistance * 10));
+        pParRigidBody.AddForce(vDirection * ((cpDistance - 1f) * 10));
     }
 
 
@@ -33,7 +33,7 @@ public abstract class DetectorMAIN : MonoBehaviour
     public void RepulseParticleRelative(Vector3 cpPosition, float cpDistance)
     {
         Vector3 vDirection = (transform.position - cpPosition).normalized;
-        pParRigidBody.AddForce(vDirection * ((GetComponent<SphereCollider>().radius - cpDistance) * 10));
+        pParRigidBody.AddForce(vDirection * ((GetComponent<SphereCollider>().radius - (cpDistance - 1f)) * 10));
     }
 
 
